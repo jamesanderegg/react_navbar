@@ -1,11 +1,42 @@
 .side-panel{
     height:100%;
     background: white;
-    box-shadow: 2px 0px 5px rgba(0,0,0,.5);
+    box-shadow: 1px 0px 7px rgba(0,0,0,.5);
     position: fixed;
     top: 0;
     left: 0;
     width: 70%;
     max-width: 400px;
     z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+.side-panel.open{
+    transform: translateX(0);
+}
+.side-panel ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.side-panel li {
+    margin: 0.5rem 0;
+}
+.side-panel a {
+    color:rgb(59, 59, 59);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.side-panel a:hover,
+.side-panel a:active {
+    color: rgb(194, 126, 1);
+}
+
+@media (min-width: 769px){
+    .side-panel {
+        display: none;
+    }
+
 }
