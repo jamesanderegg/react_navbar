@@ -1,6 +1,6 @@
 import React from 'react';
 
-import  '.SidePanel.css';
+import  './SidePanel.css';
 
 const sidePanel = props => (
     <nav className="side-panel">
