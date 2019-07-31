@@ -69,14 +69,40 @@ const topics = [
     ]
   }
 ]
+
+function Resource ( {match} ) {
+  const topic = topics.find(({ id}) => id === match.params.topicId)
+  .resources.find(({id}) => id === match.params.subId)
+
+  return (
+    <div>
+      <h3>
+        {topic.name}
+      </h3>
+      <p>{topic.description}</p>
+      <a href ={topic.url}> More Info</a>
+    </div>
+  )
+}
 function Topic ( {match}) {
-  const topic = topics.find(( {id}) => id === match.params.topicID)
+  const topic = topics.find(( {id}) => id === match.params.topicId)
   
   return (
     <div>
       <h2>{topic.name}</h2>
       <p>{topic.description}</p>
-        <ul></ul>
+        <ul>
+          {topic.resources.map((sub) => ( 
+            <li key={sub.id}>
+              <Link to={`/topics/${match.params.topicId}/${sub.id}`}>
+              {sub.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <hr />
+        <Route path={`/topics/:topicId/:subId`} component={Resource} />
     </div>
   )
 }
@@ -102,7 +128,7 @@ function Topics () {
 
       <hr />
 
-      <Route path={`/topics/:topicID`} component={Topic} />
+      <Route path={`/topics/:topicId`} component={Topic} />
     </div>
   )
 }
