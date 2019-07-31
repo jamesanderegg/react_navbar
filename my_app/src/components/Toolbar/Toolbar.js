@@ -23,8 +23,8 @@ const toolbar = props => (
                 <div className="spacer" />
                 <div className="toolbar_navigation-items">
                     <ul>
-                        <li><Link className="nav-link" to="/"onClick={ props.activePage }>Home</Link></li>
-                        <li><Link className="nav-link" to="/topics" onClick={ props.activePage }>Topics</Link></li>
+                        <li><Link className="nav-link" to="/" >Home</Link></li>
+                        <li><Link className="nav-link" to="/topics">Topics</Link></li>
                     </ul>
                 </div>
             </nav>

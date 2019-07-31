@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {
+    Link,
+  } from 'react-router-dom'
 import  './SidePanel.css';
 
 const sidePanel = props => {
@@ -10,9 +12,8 @@ const sidePanel = props => {
     return (
     <nav className= {panelClasses} >
         <ul>
-            <li><a href="/">Projects</a></li>
-            <li><a href="/">Users</a></li>
-
+            <li><Link className="nav-link" to="/" onClick={props.click}>Home</Link></li>
+            <li><Link className="nav-link" to="/topics" onClick={props.click}>Topics</Link></li>
         </ul>
     </nav>
     );

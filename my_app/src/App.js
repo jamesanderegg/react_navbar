@@ -94,7 +94,7 @@ function Topic ( {match}) {
         <ul>
           {topic.resources.map((sub) => ( 
             <li key={sub.id}>
-              <Link to={`/topics/${match.params.topicId}/${sub.id}`}>
+              <Link to={`${match.url}/${sub.id}`}>
               {sub.name}
               </Link>
             </li>
@@ -102,7 +102,7 @@ function Topic ( {match}) {
         </ul>
 
         <hr />
-        <Route path={`/topics/:topicId/:subId`} component={Resource} />
+        <Route path={`{${match.path}/}:subId`} component={Resource} />
     </div>
   )
 }
@@ -114,21 +114,21 @@ function Home () {
   )
 }
 
-function Topics () {
+function Topics ({match}) {
   return (
     <div>
       <h1>TOPICS</h1>
       <ul>
         {topics.map(({ name, id }) => (
           <li key={id}>
-            <Link to={`/topics/${id}`}>{name}</Link>
+            <Link to={`${match.url}/${id}`}>{name}</Link>
           </li>
         ))}
       </ul>
 
       <hr />
 
-      <Route path={`/topics/:topicId`} component={Topic} />
+      <Route path={`${match.path}/:topicId`} component={Topic} />
     </div>
   )
 }
@@ -136,7 +136,6 @@ function Topics () {
 class App extends Component {
   state = {
     sidePanelOpen: false,
-    activePage: "Home"
   };
   
   sidePanelClickHandler = () => {
@@ -149,12 +148,8 @@ class App extends Component {
     this.setState({sidePanelOpen: false});
   }
 
-  setActivePage = (e) => {
-    this.setState({activePage: e.target.text})
-    
-  }
   render(){
-    console.log(this.state.activePage)
+
     let backdrop;
     
     if (this.state.sidePanelOpen) {
@@ -163,8 +158,8 @@ class App extends Component {
     return (
       <Router>
         <div style={{height: '100%'}}>
-          <Toolbar sidePanelClickHandler={this.sidePanelClickHandler} activePage={this.setActivePage}/>
-          <SidePanel show={this.state.sidePanelOpen} />
+          <Toolbar sidePanelClickHandler={this.sidePanelClickHandler} />
+          <SidePanel show={this.state.sidePanelOpen} click={this.backdropClickHandler}/>
           {backdrop}
           <main style={{ marginTop: '64px' }}>      
             <Route exact path='/' component={Home} />
