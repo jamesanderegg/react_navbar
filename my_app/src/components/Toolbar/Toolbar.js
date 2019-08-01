@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {
-    BrowserRouter as Router,
-    Link,
-    Route // for later
+    Link
   } from 'react-router-dom'
 
 import ToggleButton from '../SidePanel/ToggleButton';
@@ -24,7 +22,7 @@ const toolbar = props => (
                 <div className="toolbar_navigation-items">
                     <ul>
                         <li><Link className="nav-link" to="/" >Home</Link></li>
-                        <li><Link className="nav-link" to="/topics">Topics</Link></li>
+                        <li><Link className="nav-link" to="/topics">Projects</Link></li>
                     </ul>
                 </div>
             </nav>
