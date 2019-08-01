@@ -22,7 +22,7 @@ const toolbar = props => (
                 <div className="toolbar_navigation-items">
                     <ul>
                         <li><Link className="nav-link" to="/" >Home</Link></li>
-                        <li><Link className="nav-link" to="/topics">Projects</Link></li>
+                        <li><Link className="nav-link" to="/projects">Projects</Link></li>
                     </ul>
                 </div>
             </nav>

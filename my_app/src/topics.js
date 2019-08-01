@@ -1,4 +1,6 @@
-const topics = [
+
+
+const projects = [
     {
       name: 'React Router',
       id: 'react-router',
@@ -57,3 +59,5 @@ const topics = [
       ]
     }
   ]
+
+export default projects;

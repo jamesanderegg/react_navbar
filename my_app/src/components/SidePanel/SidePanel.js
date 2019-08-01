@@ -13,7 +13,7 @@ const sidePanel = props => {
     <nav className= {panelClasses} >
         <ul>
             <li><Link className="nav-link" to="/" onClick={props.click}>Home</Link></li>
-            <li><Link className="nav-link" to="/topics" onClick={props.click}>Topics</Link></li>
+            <li><Link className="nav-link" to="/projects" onClick={props.click}>Topics</Link></li>
         </ul>
     </nav>
     );
