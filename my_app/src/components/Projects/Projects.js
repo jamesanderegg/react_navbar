@@ -1,10 +1,14 @@
 import React from 'react';
 
 import {
-  BrowserRouter as Router,
+
   Link,
   Route // for later
 } from 'react-router-dom'
+
+
+import './Card.css'
+
 
 import projects from './topics'
 
@@ -25,7 +29,6 @@ function Resource ( {match} ) {
 
 function Project ( {match}) {
     const topic = projects.find(( {id}) => id === match.params.topicId)
-    
     return (
       <div>
         <h2>{topic.name}</h2>
@@ -38,6 +41,7 @@ function Project ( {match}) {
                 </Link>
               </li>
             ))}
+            
           </ul>
   
           <hr />
@@ -48,12 +52,16 @@ function Project ( {match}) {
 
 function Projects ({match}) {
     return (
-      <div>
-        <h1>Projects</h1>
-        <ul>
-          {projects.map(({ name, id }) => (
-            <li key={id}>
-              <Link to={`${match.url}/${id}`}>{name}</Link>
+      <div className='projects-container'>
+        <h1>Projects</h1> 
+        <ul className='card-container'>
+          {projects.map(({ name, id, description }) => (
+            <li className='card' key={id}>
+              <div className='card__copy'>
+                <Link to={`${match.url}/${id}`}>{name}</Link>
+                <hr />
+                <h2>{description}</h2>
+              </div>
             </li>
           ))}
         </ul>

@@ -2,8 +2,8 @@
 
 const projects = [
     {
-      name: 'React Router',
-      id: 'react-router',
+      name: 'Python',
+      id: 'python',
       description: 'Declarative, component based routing for React',
       resources: [
         {
@@ -42,7 +42,7 @@ const projects = [
     {
       name: 'Functional Programming',
       id: 'functional-programming',
-      description: 'In computer science, functional programming is a programming paradigm—a style of building the structure and elements of computer programs—that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.',
+      description: 'In computer science, functional programming is a programming paradigm—a style of building the structure and elements of computer',
       resources: [
         {
           name: 'Imperative vs Declarative programming',

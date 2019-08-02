@@ -17,7 +17,7 @@ const toolbar = props => (
                 <div className="toolbar__toggle-button">
                 <ToggleButton click={props.sidePanelClickHandler}/>
                 </div>
-                <div className="toolbar__logo"><a href="/">THE LOGO</a></div>
+                <div className="toolbar__logo"><a href="/">DataFluent</a></div>
                 <div className="spacer" />
                 <div className="toolbar_navigation-items">
                     <ul>
